@@ -2,7 +2,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import requests
 
 HOST_NAME = "localhost"
-PORT = 4829
+PORT = 4830
 
 BASE_URL = "https://panel.dedicatedmc.io"
 USERS_URL = BASE_URL + "/api/application/users"
