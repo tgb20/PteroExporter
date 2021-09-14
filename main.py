@@ -41,7 +41,7 @@ class MyServer(BaseHTTPRequestHandler):
         exporter_text += f"# HELP total_locations The total number of locations registered in pterodactyl.\n# TYPE total_locations gauge\ntotal_locations {total_locations}\n\n"
 
         for location in response["data"]:
-            name = location["attributes"]["short"].replace(" ", "_")
+            name = location["attributes"]["short"].replace(" ", "_").replace("-", "_")
             node_count = len(location["attributes"]["relationships"]["nodes"]["data"])
             server_count = len(location["attributes"]["relationships"]["servers"]["data"])
             exporter_text += f"# HELP {name}_nodes The total number of nodes at {name}.\n# TYPE {name}_nodes gauge\n{name}_nodes {node_count}\n\n"
