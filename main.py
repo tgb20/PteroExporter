@@ -4,7 +4,7 @@ import requests
 HOST_NAME = "localhost"
 PORT = 4830
 
-BASE_URL = "https://panel.dedicatedmc.io"
+BASE_URL = "https://panel.example.com"
 USERS_URL = BASE_URL + "/api/application/users"
 NODES_URL = BASE_URL + "/api/application/nodes"
 SERVERS_URL = BASE_URL + "/api/application/servers"
