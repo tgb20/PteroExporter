@@ -1,5 +1,6 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import requests
+import time
 
 HOST_NAME = "localhost"
 PORT = 4830
@@ -21,18 +22,22 @@ class MyServer(BaseHTTPRequestHandler):
         r = requests.get(USERS_URL, headers=headers)
         response = r.json()
         total_users = response["meta"]["pagination"]["total"]
-
+        time.sleep(0.1)
+        
         r = requests.get(NODES_URL, headers=headers)
         response = r.json()
         total_nodes = response["meta"]["pagination"]["total"]
+        time.sleep(0.1)
 
         r = requests.get(SERVERS_URL, headers=headers)
         response = r.json()
         total_servers = response["meta"]["pagination"]["total"]
+        time.sleep(0.1)
 
         r = requests.get(LOCATIONS_URL, headers=headers)
         response = r.json()
         total_locations = response["meta"]["pagination"]["total"]
+        time.sleep(0.1)
 
         exporter_text = ""
         exporter_text += f"# HELP total_users The total number of users registered in pterodactyl.\n# TYPE total_users gauge\ntotal_users {total_users}\n\n"
