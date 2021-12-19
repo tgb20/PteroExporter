@@ -6,27 +6,29 @@ PteroExporter will output metrics for your Pterodactyl install.
 
 Four primary metrics are exposed:
 ```yml
-total_users
-total_nodes
-total_servers
-total_locations
+pterodactyl_total_users
+pterodactyl_total_nodes
+pterodactyl_total_servers
+pterodactyl_total_locations
 ```
 
 Then for each location two additional metrics are exposed:
 ```yml
-LOCATION_nodes
-LOCATION_servers
+pterodactyl_LOCATION_nodes
+pterodactyl_LOCATION_servers
 ```
 `LOCATION` is replaced with the locations name with spaces replaced with _.
 
 ### Self hosting
-Install requests:
-`pip install requests`
+`npm install`
 
-Modify `PORT` on line 5 to the port you want to use.
+`npm start`
 
-Replace `BASE_URL` with the URL of your Pterodactyl install following the same format as what is there.
+#### config.json
+`port` to the port you want to use.
 
-Replace `PTERO_API_KEY` with a application api key.
+`ptero_url` with the URL of your Pterodactyl panel (https://panel.website.com)
+
+`api_key` with an admin API key with all read permissions
 
 I recommend setting up a reverse proxy but it is not necessary.
